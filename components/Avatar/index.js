@@ -5,7 +5,7 @@ const Avatar = ({ momento }) => {
             {momento.img && (
                 <img className="rounded-full w-36 h-36" src={momento.img} alt="Extra Large"/>
             )}
-            <p className="font-bold">{momento.nombre}</p>
+            <p className="font-bold py-2">{momento.nombre}</p>
         </div>
     )
 }

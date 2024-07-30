@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Avatar from "@/components/Avatar";
+import Card from "@/components/Cards";
 import momentos from "@/components/momentos/artistas.json";
 
 
@@ -30,11 +31,11 @@ export default function Home() {
           <a href="">En vivo</a>
         </div>
         <section>
-            <h1 className="text-center font-bold">Artistas del momento</h1>
-            <div className="flex justify-center space-x-4">
-                {artista1.map((momento, index) => (
-                    <Avatar key={index} momento={momento} />
-                ))}
+            <h1 className="text-center font-bold text-xl">Artistas del momento</h1>
+            <div className="flex overflow-x-scroll p-2 gap-2">
+                  {artista1.map((momento, index) => (
+                      <Card key={index} momento={momento} />
+                  ))}
             </div>
         </section>
       </main>
