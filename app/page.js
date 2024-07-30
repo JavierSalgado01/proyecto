@@ -1,7 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
+import Avatar from "@/components/Avatar";
+import momentos from "@/components/momentos/artistas.json";
+
 
 export default function Home() {
+  const artista1 = momentos.datos;
+
   return (
     <main>
       <header className="flex justify-between px-6">
@@ -25,7 +30,12 @@ export default function Home() {
           <a href="">En vivo</a>
         </div>
         <section>
-          <h1 className="text-center font-bold">Artistas del momento</h1>
+            <h1 className="text-center font-bold">Artistas del momento</h1>
+            <div className="flex justify-center space-x-4">
+                {artista1.map((momento, index) => (
+                    <Avatar key={index} momento={momento} />
+                ))}
+            </div>
         </section>
       </main>
   );
